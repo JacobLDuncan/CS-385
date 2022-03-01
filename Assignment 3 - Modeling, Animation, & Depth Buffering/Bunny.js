@@ -7,7 +7,7 @@
 
 function Bunny(gl) {
 
-    var program = initShaders(gl, "Bunny-vertex-shader", "Bunny-fragment-shader");
+    var program = initShaders(gl, "BunnyOrDragon-vertex-shader", "BunnyOrDragon-fragment-shader");
 
 	var positions = [
 		-0.0378297, 0.12794, 0.00447467,

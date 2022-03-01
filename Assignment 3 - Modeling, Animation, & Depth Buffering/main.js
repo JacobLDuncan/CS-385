@@ -18,10 +18,14 @@ function init(){
 	gl.enable(gl.CULL_FACE);
 	gl.cullFace(gl.BACK);
 	
+	// For rendering cube
 	cube = new Cube(gl);
 	
 	// For rendering bunny
 	//bunny = new Bunny(gl);
+	
+	// For rendering Dragon
+	//dragon = new Dragon(gl);
 	
 	render();
 }
@@ -40,6 +44,9 @@ function render(){
 	
 	// For rendering bunny
 	//bunny.render();
+	
+	// For rendering dragon
+	//dragon.render();
 	
 	requestAnimationFrame(render);
 }

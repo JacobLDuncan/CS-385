@@ -3,6 +3,7 @@
     <script type="text/javascript" src="initShaders.js"></script>
     <script type="text/javascript" src="Cube.js"></script>
 	<script type="text/javascript" src="Bunny.js"></script>
+	<script type="text/javascript" src="Dragon.js"></script>
     <script type="text/javascript" src="main.js"></script>
 	<script type="text/javascript" src="MV.js"></script>
 
@@ -35,7 +36,7 @@
         }
     </script>
 	
-	<script id="Bunny-vertex-shader" type="x-shader/x-vertex">#version 300 es
+	<script id="BunnyOrDragon-vertex-shader" type="x-shader/x-vertex">#version 300 es
         in vec4 aPosition;
         
         void main()
@@ -44,7 +45,7 @@
             gl_Position = aPosition;
         }
     </script>
-    <script id="Bunny-fragment-shader" type="x-shader/x-fragment">#version 300 es
+    <script id="BunnyOrDragon-fragment-shader" type="x-shader/x-fragment">#version 300 es
         precision highp float;
 
         out vec4 fColor;

@@ -9,8 +9,7 @@ function Cube(gl) {
 
     var program = initShaders(gl, "Cube-vertex-shader", "Cube-fragment-shader");
 
-    var positions = [
-        // --> Insert your vertex positions here
+	var positions = [
         -0.5, -0.5, -0.5,   // 0
         0.5, -0.5, -0.5,    // 1
         0.5, -0.5, 0.5,     // 2
@@ -22,7 +21,6 @@ function Cube(gl) {
     ];
 
     var indices = [
-        // --> Insert you index values here
 		1, 3, 0,
         1, 2, 3,
         2, 7, 3,
@@ -70,8 +68,12 @@ function Cube(gl) {
     gl.enableVertexAttribArray( positions.aPosition );
 	
 	MV = gl.getUniformLocation(program, "MV");
+	P = gl.getUniformLocation(program, "P");
+	V = gl.getUniformLocation(program, "V");
 	
 	this.MV = mat4();  // mat4() is in MV.js
+	this.P = mat4();
+	this.V = mat4();
 
     this.render = function () {
         gl.useProgram( program );
@@ -79,14 +81,16 @@ function Cube(gl) {
         gl.bindBuffer( gl.ARRAY_BUFFER, positions.buffer );
         gl.vertexAttribPointer( positions.aPosition, positions.numComponents, gl.FLOAT, false, 0, 0 );
 		
-		// Render the wireframe version of the cube
-        gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, edges.buffer );
-        gl.drawElements( gl.LINES, edges.length, gl.UNSIGNED_SHORT, 0 );
-		
 		gl.uniformMatrix4fv(MV, false, flatten(this.MV));
- 
+		gl.uniformMatrix4fv(P, false, flatten(this.P));
+		gl.uniformMatrix4fv(V, false, flatten(this.V));
+		
+		// Render the wireframe version of the cube
+        //gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, edges.buffer );
+        //gl.drawElements( gl.LINES, edges.length, gl.UNSIGNED_SHORT, 0 );
+		
 		// Render the solid version of the cube
-        //gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, indices.buffer );
-        //gl.drawElements( gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0 );
+        gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, indices.buffer );
+        gl.drawElements( gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0 );
     }
 };

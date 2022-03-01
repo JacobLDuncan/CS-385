@@ -2,6 +2,7 @@
 <head>
     <script type="text/javascript" src="initShaders.js"></script>
     <script type="text/javascript" src="Cube.js"></script>
+	<script type="text/javascript" src="Bunny.js"></script>
     <script type="text/javascript" src="main.js"></script>
 	<script type="text/javascript" src="MV.js"></script>
 
@@ -18,7 +19,6 @@
             gl_Position = MV * P * V * aPosition;
         }
     </script>
-
     <script id="Cube-fragment-shader" type="x-shader/x-fragment">#version 300 es
         precision highp float;
 
@@ -32,6 +32,27 @@
 			/*const vec4 red = vec4(1.0, 0.0, 0.0, 1.0);
 			const vec4 blue = vec4(0.0, 0.0, 1.0, 1.0);
 				fColor = gl_FrontFacing ? blue : red;*/
+        }
+    </script>
+	
+	<script id="Bunny-vertex-shader" type="x-shader/x-vertex">#version 300 es
+        in vec4 aPosition;
+        
+        void main()
+        {
+            gl_PointSize = 3.0;
+            gl_Position = aPosition;
+        }
+    </script>
+    <script id="Bunny-fragment-shader" type="x-shader/x-fragment">#version 300 es
+        precision highp float;
+
+        out vec4 fColor;
+
+        void main()
+        {
+			fColor = vec4(1.0, 1.0, 1.0, 1.0);
+			
         }
     </script>
 </head>

@@ -20,6 +20,9 @@ function init(){
 	
 	cube = new Cube(gl);
 	
+	// For rendering bunny
+	//bunny = new Bunny(gl);
+	
 	render();
 }
 
@@ -27,11 +30,17 @@ function render(){
 	gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
 	
 	angle += 1;
+	
+	// Cube transformations
 	cube.MV = rotate(angle, [1, 1, 1]);  // rotate around the axis (x, y, z)
 	cube.P = perspective(90, aspect, 1, 10);  // fovy, aspect, near, far
-	cube.V = lookAt(vec3(1, 1, 2), vec3(-1, -1, -1), vec3(1, 1, 1));  // eye, at, up	
+	cube.V = lookAt(vec3(1, 1, 2), vec3(-1, -1, -1), vec3(1, 1, 1));  // eye, at, up
 	
 	cube.render();
+	
+	// For rendering bunny
+	//bunny.render();
+	
 	requestAnimationFrame(render);
 }
 

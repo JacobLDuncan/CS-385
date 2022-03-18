@@ -15,9 +15,9 @@ function init() {
     gl.enable(gl.DEPTH_TEST);
    
     // Add your sphere creation and configuration code here
-	sun = new Sphere();
-	earth = new Sphere();
-	moon = new Sphere();
+	sun = new Sphere(32);
+	earth = new Sphere(32);
+	moon = new Sphere(32);
 	
 	// Radius
 	sun.radius = 30;
@@ -25,8 +25,8 @@ function init() {
 	moon.radius = 1;
 	
 	// Orbit
-	earth.orbit = 10 + 2 * sun.radius;
-	moon.orbit = 5 + 2 * earth.radius;
+	earth.orbit = 60;
+	moon.orbit = 10;
 	
 	// Color
 	sun.color = vec4(1.0, 1.0, 0.0, 1.0);
@@ -37,7 +37,7 @@ function init() {
 	var D = 2 * (earth.orbit + moon.orbit + moon.radius);
 	
 	// Near & Far Parameters
-	var near = 8;
+	var near = 10;
 	var far = near + D;
 	
 	// Fovy Parameters

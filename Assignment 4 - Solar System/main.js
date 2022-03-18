@@ -1,3 +1,8 @@
+//////////////////////////////////////////////////////////////////////////////
+//
+//  main.js
+//
+//////////////////////////////////////////////////////////////////////////////
 
 "use strict";
 
@@ -20,12 +25,12 @@ function init() {
 	moon = new Sphere(32);
 	
 	// Radius
-	sun.radius = 30;
+	sun.radius = 25;
 	earth.radius = 3;
 	moon.radius = 1;
 	
 	// Orbit
-	earth.orbit = 60;
+	earth.orbit = 100;
 	moon.orbit = 10;
 	
 	// Color
@@ -37,7 +42,7 @@ function init() {
 	var D = 2 * (earth.orbit + moon.orbit + moon.radius);
 	
 	// Near & Far Parameters
-	var near = 10;
+	var near = 25;
 	var far = near + D;
 	
 	// Fovy Parameters
@@ -49,7 +54,6 @@ function init() {
 	
 	// Perspective Transformation
 	var P = perspective(fovy, aspect, near, far);
-	
 	sun.P = P;
 	earth.P = P;
 	moon.P = P;
@@ -86,8 +90,8 @@ function init() {
 		ms.push();
 		ms.rotate(year, vec3(0, 0, 1));
 		ms.translate(earth.orbit, 0, 0);
+		ms.rotate(day * 180, vec3(0, 0, 1));
 		ms.push();
-		ms.rotate(day, vec3(0, 0, 1));
 		ms.scale(earth.radius);
 		earth.MV = ms.current();
 		earth.render();

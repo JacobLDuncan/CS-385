@@ -1,0 +1,11 @@
+Model Information:
+* title:	WhammyCo Checkered Flag
+* source:	https://sketchfab.com/3d-models/whammyco-checkered-flag-793606a5e44741a9a9635901e1f4b406
+* author:	blackmaas (https://sketchfab.com/blackmaas)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "WhammyCo Checkered Flag" (https://sketchfab.com/3d-models/whammyco-checkered-flag-793606a5e44741a9a9635901e1f4b406) by blackmaas (https://sketchfab.com/blackmaas) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
